@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	Created by http://cafe.naver.com/citrineframework
+	You can freely copy, distribute, modify for commercial or non-commercial purposes.
+-->
+<MOML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.applusform.com/xsd/moml_ui.xsd" version="1.1.1">
+
+	<FUNCTION id="goNextCheck">
+		<CMD condition="userVariable.aniIndex &lt; 4">
+			<CMD cmd="function.pageSetting(userVariable.aniIndex)" />
+		</CMD>
+	</FUNCTION>
+
+	<FUNCTION id="goPrevCheck">
+		<CMD condition="userVariable.aniIndex &gt; 1">
+			<CMD cmd="function.prevPageSetting(userVariable.aniIndex)" />
+		</CMD>
+	</FUNCTION>
+
+	<FUNCTION id="pageSetting(index)">
+		<CMD cmd="mainPage2.defaultImg = 'res/appintro'+userVariable.aniIndex+'.jpg'" />
+		<CMD cmd="userVariable.aniIndex = math.add(index, 1)" />
+		<CMD condition="userVariable.aniIndex == 1"
+			cmd="lineLabel.defaultImg='#b33f43',signBtn.defaultImg='#ff5a5f',signBtn.pressedImg='#c54549',loginBtn.defaultImg='#ff5a5f',loginBtn.pressedImg='#c54549',first.defaultImg='#ffffff',second.defaultImg='#80ffffff',third.defaultImg='#80ffffff',fourth.defaultImg='#80ffffff'" />
+		<CMD condition="userVariable.aniIndex == 2"
+			cmd="lineLabel.defaultImg='#b78000',signBtn.defaultImg='#ffb400',signBtn.pressedImg='#d29400',loginBtn.defaultImg='#ffb400',loginBtn.pressedImg='#d29400',first.defaultImg='#80ffffff',second.defaultImg='#ffffff',third.defaultImg='#80ffffff',fourth.defaultImg='#80ffffff'" />
+		<CMD condition="userVariable.aniIndex == 3"
+			cmd="lineLabel.defaultImg='#897d45',signBtn.defaultImg='#b4a76c',signBtn.pressedImg='#9b8d4f',loginBtn.defaultImg='#b4a76c',loginBtn.pressedImg='#9b8d4f',first.defaultImg='#80ffffff',second.defaultImg='#80ffffff',third.defaultImg='#ffffff',fourth.defaultImg='#80ffffff'" />
+		<CMD condition="userVariable.aniIndex == 4"
+			cmd="lineLabel.defaultImg='#00474f',signBtn.defaultImg='#007a87',signBtn.pressedImg='#005b66',loginBtn.defaultImg='#007a87',loginBtn.pressedImg='#005b66',first.defaultImg='#80ffffff',second.defaultImg='#80ffffff',third.defaultImg='#80ffffff',fourth.defaultImg='#ffffff'" />
+		<CMD condition="userVariable.aniIndex == 1" cmd="titleLabel.text = 'UNIQUE, AMAZING PLACES TO STAY - HOSTED BY REAL PEOPLE', subLabel.visible='visible', subLabel.text=''" />
+		<CMD condition="userVariable.aniIndex == 2" cmd="titleLabel.text = 'FIND'+'\n'+'THE'+'\n'+'PERFECT'+'\n'+'SPACE', subLabel.visible='visible', subLabel.text='or simply browse the world?s most inspiring accommodations'" />
+		<CMD condition="userVariable.aniIndex == 3" cmd="titleLabel.text = 'BOOK IT'+'\n'+'IN A'+'\n'+'SNAP', subLabel.visible='visible', subLabel.text='once your host accepts, you?re good to go!'" />
+		<CMD condition="userVariable.aniIndex == 4" cmd="titleLabel.text = 'YOU＇RE'+'\n'+'ON'+'\n'+'YOUR'+'\n'+'WAY', subLabel.visible='visible', subLabel.text='comminicate with your host and access your itinerary on the go'" />
+		<CMD cmd="mainPage.defaultImg = 'res/appintro'+userVariable.aniIndex+'.jpg'" />
+		<CMD cmd="animation.show('mainPage', 'fade', '', 500, '')" />
+		<CMD cmd="animation.flyIn('labelWindow', 720, 0,1, 'easeOut7', 500, '')" />
+	</FUNCTION>
+
+	<FUNCTION id="prevPageSetting(index)">
+		<CMD cmd="mainPage2.defaultImg = 'res/appintro'+userVariable.aniIndex+'.jpg'" />
+		<CMD cmd="userVariable.aniIndex = math.sub(index, 1)" />
+		<CMD condition="userVariable.aniIndex == 1"
+			cmd="lineLabel.defaultImg='#b33f43',signBtn.defaultImg='#ff5a5f',signBtn.pressedImg='#c54549',loginBtn.defaultImg='#ff5a5f',loginBtn.pressedImg='#c54549',first.defaultImg='#ffffff',second.defaultImg='#80ffffff',third.defaultImg='#80ffffff',fourth.defaultImg='#80ffffff'" />
+		<CMD condition="userVariable.aniIndex == 2"
+			cmd="lineLabel.defaultImg='#b78000',signBtn.defaultImg='#ffb400',signBtn.pressedImg='#dd9b00',loginBtn.defaultImg='#ffb400',loginBtn.pressedImg='#dd9b00',first.defaultImg='#80ffffff',second.defaultImg='#ffffff',third.defaultImg='#80ffffff',fourth.defaultImg='#80ffffff'" />
+		<CMD condition="userVariable.aniIndex == 3"
+			cmd="lineLabel.defaultImg='#897d45',signBtn.defaultImg='#b4a76c',signBtn.pressedImg='#a49653',loginBtn.defaultImg='#b4a76c',loginBtn.pressedImg='#a49653',first.defaultImg='#80ffffff',second.defaultImg='#80ffffff',third.defaultImg='#ffffff',fourth.defaultImg='#80ffffff'" />
+		<CMD condition="userVariable.aniIndex == 4"
+			cmd="lineLabel.defaultImg='#00474f',signBtn.defaultImg='#007a87',signBtn.pressedImg='#006773',loginBtn.defaultImg='#007a87',loginBtn.pressedImg='#006773',first.defaultImg='#80ffffff',second.defaultImg='#80ffffff',third.defaultImg='#80ffffff',fourth.defaultImg='#ffffff'" />
+		<CMD condition="userVariable.aniIndex == 1" cmd="titleLabel.text = 'UNIQUE, AMAZING PLACES TO STAY - HOSTED BY REAL PEOPLE', subLabel.visible='visible', subLabel.text=''" />
+		<CMD condition="userVariable.aniIndex == 2" cmd="titleLabel.text = 'FIND'+'\n'+'THE'+'\n'+'PERFECT'+'\n'+'SPACE', subLabel.visible='visible', subLabel.text='or simply browse the world?s most inspiring accommodations'" />
+		<CMD condition="userVariable.aniIndex == 3" cmd="titleLabel.text = 'BOOK IT'+'\n'+'IN A'+'\n'+'SNAP', subLabel.visible='visible', subLabel.text='once your host accepts, you?re good to go!'" />
+		<CMD condition="userVariable.aniIndex == 4" cmd="titleLabel.text = 'YOU＇RE'+'\n'+'ON'+'\n'+'YOUR'+'\n'+'WAY', subLabel.visible='visible', subLabel.text='comminicate with your host and access your itinerary on the go'" />
+		<CMD cmd="mainPage.defaultImg = 'res/appintro'+userVariable.aniIndex+'.jpg'" />
+		<CMD cmd="animation.show('mainPage', 'fade', '', 500, '')" />
+		<CMD cmd="animation.flyIn('labelWindow', -720, 0,1, 'easeOut7', 500, '')" />
+	</FUNCTION>
+
+	<CMD cmd="userVariable.aniIndex = 1" />
+	<UILAYOUT portrait="720,1230" landscape="720,1230">
+		<WINDOW id="mainPage2" layout="0,0,720,1230" defaultImg="" />
+		<WINDOW id="mainPage" layout="0,0,720,1230" defaultImg="res/appintro1.jpg">
+			<WINDOW layout="0,0,720,1230" onFlickRight="function.goPrevCheck" onFlickLeft="function.goNextCheck">
+				<WINDOW id="labelWindow" layout="30,435,550,auto" align="linear:vertical">
+					<LABEL id="titleLabel" layout="550,auto" text="UNIQUE, AMAZING PLACES TO STAY - HOSTED BY REAL PEOPLE" fontFace="res/circular_bold.otf" fontSize="80" fontStyle="bold" minFontSize="-1"
+						multiLine="true" textColor="#ffffff" />
+					<LABEL id="subLabel" layout="550,auto" text="" fontFace="res/circular_book.otf" fontSize="40" minFontSize="-1" multiLine="true" textColor="#ffffff" visible="invisible" margin="0,30,0,0" />
+				</WINDOW>
+			</WINDOW>
+		</WINDOW>
+		<WINDOW layout="0,1035,720,75" align="linear:horizontal|center">
+			<STYLEBUTTON id="first" layout="20,20" shape="circle" defaultImg="#ffffff" />
+			<STYLEBUTTON id="second" layout="20,20" shape="circle" defaultImg="#80ffffff" margin="20,0,0,0" />
+			<STYLEBUTTON id="third" layout="20,20" shape="circle" defaultImg="#80ffffff" margin="20,0,0,0" />
+			<STYLEBUTTON id="fourth" layout="20,20" shape="circle" defaultImg="#80ffffff" margin="20,0,0,0" />
+		</WINDOW>
+		<BUTTON id="signBtn" layout="0,1130,360,100" text="Sign Up" defaultImg="#ff5a5f" pressedImg="#c54549" fontFace="res/circular_bold.otf" fontSize="40" textAlign="center" textColor="#ffffff"
+			onClick="device.toastPopup('Sign Up')" />
+		<BUTTON id="loginBtn" layout="360,1130,360,100" text="Log In" defaultImg="#ff5a5f" pressedImg="#c54549" fontFace="res/circular_bold.otf" fontSize="40" textAlign="center" textColor="#ffffff"
+			onClick="device.toastPopup('Log In')" />
+		<LABEL id="lineLabel" layout="359,1145,2,65" defaultImg="#b33f43" />
+	</UILAYOUT>
+</MOML>
